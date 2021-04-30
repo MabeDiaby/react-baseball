@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CountersBar({outs}) {
+function CountersBar({outs, strikes}) {
     return (
         <table>
            <tr class="details-container">
@@ -14,7 +14,7 @@ function CountersBar({outs}) {
                 Strikes:
             </td>
             <td class="strikes-value">
-                0
+                {strikes}
             </td>
             <td class="outs-label">
                 Outs:

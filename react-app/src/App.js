@@ -33,16 +33,26 @@ function App() {
     }
   }
 
+  const clickSwingMiss = () => {
+    if (strikes == 2) {
+      setStrikes(0)
+      clickOut()
+    } else {
+      setStrikes(strikes + 1)
+    }
+  }
+
   return (
     <div className="App">
       
         <InningBar currentInning={inning}/>
         <ScoreBar score={score}/>
-        <CountersBar outs={outs}/>
+        <CountersBar outs={outs} strikes={strikes}/>
 
         <EventsMenu 
           clickHomerun={clickHomerun}
           clickOut={clickOut}
+          clickSwingMiss={clickSwingMiss}
           />
       
     </div>
