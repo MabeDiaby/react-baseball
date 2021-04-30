@@ -1,8 +1,6 @@
 import React from 'react'
 
-function ScoreBar() {
-    
-    const score = [Array(6).fill(0), Array(6).fill(0)]
+function ScoreBar({score}) {
 
     return (
     <table>
