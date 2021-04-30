@@ -1,9 +1,8 @@
 import React from 'react'
 
-function InningBar() {
+function InningBar({currentInning}) {
 
     const innings = Array.from(Array(6).fill(0).keys())
-    const currentInning = 1
 
     return (
     <table>

@@ -6,22 +6,44 @@ import EventsMenu from  './components/EventsMenu'
 
 function App() {
   
-  const [score, setScore] = useState([Array(6).fill(0), Array(6).fill(0)])
+  const [balls,   setBalls]     = useState(0)
+  const [strikes, setStrikes]   = useState(0)
+  const [outs,    setOuts]      = useState(0)
+  const [inning,  setInning]    = useState(1)
+  const [atBat,   setAtBat]     = useState(0)
+  const [score, setScore]       = useState([Array(6).fill(0), Array(6).fill(0)])
 
   const clickHomerun = () => {
     let newScore = [...score]
-    newScore[0][0] ++
+    newScore[atBat][inning - 1] ++
     setScore(newScore)
+  }
+
+  const clickOut = () => {
+    if (outs == 2) {
+      setOuts(0)
+      if (atBat == 1) {
+        setAtBat(0)
+        setInning(inning+1)
+      } else {
+        setAtBat(1)
+      }
+    } else {
+      setOuts(outs + 1)
+    }
   }
 
   return (
     <div className="App">
       
-        <InningBar/>
+        <InningBar currentInning={inning}/>
         <ScoreBar score={score}/>
-        <CountersBar/>
+        <CountersBar outs={outs}/>
 
-        <EventsMenu clickHomerun={clickHomerun}/>
+        <EventsMenu 
+          clickHomerun={clickHomerun}
+          clickOut={clickOut}
+          />
       
     </div>
   );

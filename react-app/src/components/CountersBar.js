@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CountersBar() {
+function CountersBar({outs}) {
     return (
         <table>
            <tr class="details-container">
@@ -20,7 +20,7 @@ function CountersBar() {
                 Outs:
             </td>
             <td class="outs-value">
-                0
+                {outs}
             </td>
            </tr>
        </table>
