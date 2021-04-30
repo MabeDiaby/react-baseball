@@ -8,6 +8,28 @@
 <body>
     <div class="leaderboard-container">
        <table>
+        <tr class="inning-label">
+            <td class="label">
+                Inning
+            </td>
+            <td class="1">1</td>
+            <td class="2">2</td>
+            <td class="3">3</td>
+            <td class="4">4</td>
+            <td class="5">5</td>
+            <td class="6">6</td>
+        </tr>
+        <tr class="inning-marker">
+            <td class="label">
+            </td>
+            <td class="inning 1">*</td>
+            <td class="inning 2"></td>
+            <td class="inning 3"></td>
+            <td class="inning 4"></td>
+            <td class="inning 5"></td>
+            <td class="inning 6"></td>
+        </tr>
+
         <tr class="home score-row">
             <td class="team-name">
                 Home
@@ -19,7 +41,8 @@
             <td class="runs 5">0</td>
             <td class="runs 6">0</td>
         </tr>
-        <tr class="away score-row"></tr>
+        
+        <tr class="away score-row">
             <td class="team-name">
                 Away
             </td>
@@ -57,6 +80,7 @@
        <div class="events-container">
            <button id="swing-miss">Swing and a Miss</button>
            <button id="event-out">Out</button>
+           <button id="homerun">Homerun</button>
        </div>
        
     </div>
