@@ -1,0 +1,76 @@
+git diff ba0a82 3b827c
+git diff 3b827c 415ef4
+
+3412c5
+adef79
+f848eb
+14e43c
+07ddb2
+ff5429
+415ef4
+3b827c
+ba0a82
+
+3412c55d2b1025a540cd419a8dfdd196e9548973
+adef79bf58ee35d3ca156952517859f402261090
+f848eb855fedf096d84f93e33d0d74b5f5a59ff1
+14e43c03063189b5655c9adcb25aa245a1935fcc
+07ddb25a44aa90fd3130a1ddb463f5cfb4d106dc
+ff542963fa573c4b94d58ba83c2e30c41f8c4fc8
+415ef470208b100ce418221a77d0fcdf1cd34db8
+3b827c600fadc17396dc15e3f70bad4049484e8e
+ba0a825b1d2efe2497c3fe70bd417504c8f6df41
+
+commit 3412c55d2b1025a540cd419a8dfdd196e9548973
+Author: Will Sutton <wsutton17@gmail.com>
+Date:   Tue May 4 08:39:44 2021 -0400
+
+    adding in readme
+
+commit adef79bf58ee35d3ca156952517859f402261090
+Author: Will Sutton <wsutton17@gmail.com>
+Date:   Thu Apr 29 23:38:38 2021 -0400
+
+    final hooks and handlers added
+
+commit f848eb855fedf096d84f93e33d0d74b5f5a59ff1
+Author: Will Sutton <wsutton17@gmail.com>
+Date:   Thu Apr 29 23:29:04 2021 -0400
+
+    more hooks and attached to renders and onclicks for eventOut
+
+commit 14e43c03063189b5655c9adcb25aa245a1935fcc
+Author: Will Sutton <wsutton17@gmail.com>
+Date:   Thu Apr 29 23:17:14 2021 -0400
+
+    small hook example
+
+commit 07ddb25a44aa90fd3130a1ddb463f5cfb4d106dc
+Author: Will Sutton <wsutton17@gmail.com>
+Date:   Thu Apr 29 23:04:02 2021 -0400
+
+    example map for repeated append
+
+commit ff542963fa573c4b94d58ba83c2e30c41f8c4fc8
+Author: Will Sutton <wsutton17@gmail.com>
+Date:   Thu Apr 29 22:48:40 2021 -0400
+
+    skeleton for react app built
+
+commit 415ef470208b100ce418221a77d0fcdf1cd34db8
+Author: Will Sutton <wsutton17@gmail.com>
+Date:   Thu Apr 29 22:04:09 2021 -0400
+
+    refactor to updateAll()
+
+commit 3b827c600fadc17396dc15e3f70bad4049484e8e
+Author: Will Sutton <wsutton17@gmail.com>
+Date:   Thu Apr 29 21:54:48 2021 -0400
+
+    adding inning and run updates
+
+commit ba0a825b1d2efe2497c3fe70bd417504c8f6df41
+Author: Will Sutton <wsutton17@gmail.com>
+Date:   Thu Apr 29 19:31:05 2021 -0400
+
+    step1 basic dom example

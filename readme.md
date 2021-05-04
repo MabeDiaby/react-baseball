@@ -17,10 +17,11 @@ In the following lessons we'll build a baseball scoreboard using two styles: DOM
 ## What does React accomplish for us?
  Based on the differences in authoring the app, 
  - HTML can be chuncked and Array Mapping replaces HTML hard-coding or confusing DOM-writing loops. Think of the difference between `document.createElement("li")` style vs. JSX mixed HTML and JS style of building smaller components.
+ <br>
  - Event listening / handling gets broken down into hooks and redering. This makes it easy to do multiple re-renders for one event, but limit re-rendering where not needed.
 
 #### Compare the difference in creating dynamic content
-Look at a dougie lab dom write code vs some modularized baseball react code. See commit 07ddb25a44 vs previous, ff542963.
+Look at a dougie lab dom write code vs some modularized baseball react code (`git diff ff5429 07ddb2`).
 
 <details>
     <summary>Old Style</summary>
@@ -44,10 +45,79 @@ Look at a dougie lab dom write code vs some modularized baseball react code. See
 ```
 </details>
 
+<details>
+    <summary>New Style</summary>
+```
+ <tr class="away score-row">
+             <td class="team-name">
+                 Away
+             </td>
+-            <td class="runs 1">0</td>
+-            <td class="runs 2">0</td>
+-            <td class="runs 3">0</td>
+-            <td class="runs 4">0</td>
+-            <td class="runs 5">0</td>
+-            <td class="runs 6">0</td>
++            {score[1].map((val, index) => (<ScoreSquare scoreValue={val} index={index}/>) )}
+```
+</details>
 #### View the mass re-rendering
 Open the `Elements` tab on your developer tools. In the `plain-dom` page, expand the scoreboard elements and then trigger an event. See how they all flash to show they are all updating. Then open the same devtools view with the `react-app` page, and perform an event, and see only very specific items update.
 
-We can see why the plain-dom page updates everything in diff 415ef4 3b827.
+We can see why the plain-dom page updates everything in `git diff 415ef4 3b827`.
+
+<details>
+    <summary>DOM manipulation refactor</summary>
+
+```
+diff --git a/plain-dom/script.js b/plain-dom/script.js
+index bf8b018..978a746 100644
+--- a/plain-dom/script.js
++++ b/plain-dom/script.js
+@@ -30,31 +30,28 @@ function swingMiss() {
+     } else {
+         strikes ++
+     }
+-    updateBalls()
+-    updateStrikes()
+-    updateOuts()
+-    updateInning()
+-    updateRuns()
++    
++    updateAll()
+ }
+ 
+ function eventOut() {
+     incrementOut()
+ 
+-    updateBalls()
+-    updateStrikes()
+-    updateOuts()
+-    updateInning()
+-    updateRuns()
++    updateAll()
+ }
+ 
+ function homerun() {
+     incrementCurrentScore()
+     
+-    updateBalls()
+-    updateStrikes()
+-    updateOuts()
+-    updateInning()
+-    updateRuns()
++    updateAll()
++}
++
++function updateAll() {
++    updateBalls()    // never changes innings, outs
++    updateStrikes()  // never changes runs
++    updateOuts()     // never changes runs
++    updateInning()   // never changes runs
++    updateRuns()     // never changes innings, outs; only needs current inning
+ }
+```
+</details>
 
 ## How scalable is each style, in terms of handling increasing complexity?
 Let's look at complex web pages and see what would happen if we continued to use simple DOM manipulation to develop the page.

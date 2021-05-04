@@ -1,0 +1,48 @@
+diff --git a/plain-dom/script.js b/plain-dom/script.js
+index bf8b018..978a746 100644
+--- a/plain-dom/script.js
++++ b/plain-dom/script.js
+@@ -30,31 +30,28 @@ function swingMiss() {
+     } else {
+         strikes ++
+     }
+-    updateBalls()
+-    updateStrikes()
+-    updateOuts()
+-    updateInning()
+-    updateRuns()
++    
++    updateAll()
+ }
+ 
+ function eventOut() {
+     incrementOut()
+ 
+-    updateBalls()
+-    updateStrikes()
+-    updateOuts()
+-    updateInning()
+-    updateRuns()
++    updateAll()
+ }
+ 
+ function homerun() {
+     incrementCurrentScore()
+     
+-    updateBalls()
+-    updateStrikes()
+-    updateOuts()
+-    updateInning()
+-    updateRuns()
++    updateAll()
++}
++
++function updateAll() {
++    updateBalls()    // never changes innings, outs
++    updateStrikes()  // never changes runs
++    updateOuts()     // never changes runs
++    updateInning()   // never changes runs
++    updateRuns()     // never changes innings, outs; only needs current inning
+ }
+ 
+ function incrementOut() {

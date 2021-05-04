@@ -1,0 +1,48 @@
+diff --git a/react-app/src/components/ScoreBar.js b/react-app/src/components/ScoreBar.js
+index 07e432c..4349ef4 100644
+--- a/react-app/src/components/ScoreBar.js
++++ b/react-app/src/components/ScoreBar.js
+@@ -1,33 +1,30 @@
+ import React from 'react'
+ 
+ function ScoreBar() {
++    
++    const score = [Array(6).fill(0), Array(6).fill(0)]
++
+     return (
+     <table>
+         <tr class="home score-row">
+             <td class="team-name">
+                 Home
+             </td>
+-            <td class="runs 1">0</td>
+-            <td class="runs 2">0</td>
+-            <td class="runs 3">0</td>
+-            <td class="runs 4">0</td>
+-            <td class="runs 5">0</td>
+-            <td class="runs 6">0</td>
++            {score[0].map((val, index) => (<ScoreSquare scoreValue={val} index={index}/>) )}
+         </tr>
+         
+         <tr class="away score-row">
+             <td class="team-name">
+                 Away
+             </td>
+-            <td class="runs 1">0</td>
+-            <td class="runs 2">0</td>
+-            <td class="runs 3">0</td>
+-            <td class="runs 4">0</td>
+-            <td class="runs 5">0</td>
+-            <td class="runs 6">0</td>
++            {score[1].map((val, index) => (<ScoreSquare scoreValue={val} index={index}/>) )}
+         </tr>
+     </table>
+     )
+ }
+ 
++function ScoreSquare({scoreValue, index}) {
++    return (<td class={"runs " + index}>{scoreValue}</td>)
++}
++
+ export default ScoreBar
+\ No newline at end of file
