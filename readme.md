@@ -47,6 +47,7 @@ Look at a dougie lab dom write code vs some modularized baseball react code (`gi
 
 <details>
     <summary>New Style</summary>
+
 ```
  <tr class="away score-row">
              <td class="team-name">
@@ -60,6 +61,7 @@ Look at a dougie lab dom write code vs some modularized baseball react code (`gi
 -            <td class="runs 6">0</td>
 +            {score[1].map((val, index) => (<ScoreSquare scoreValue={val} index={index}/>) )}
 ```
+
 </details>
 #### View the mass re-rendering
 Open the `Elements` tab on your developer tools. In the `plain-dom` page, expand the scoreboard elements and then trigger an event. See how they all flash to show they are all updating. Then open the same devtools view with the `react-app` page, and perform an event, and see only very specific items update.
