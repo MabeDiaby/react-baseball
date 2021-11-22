@@ -9,6 +9,7 @@ let score = [Array(6).fill(0), Array(6).fill(0)]
 const buttonSwingMiss = document.querySelector("#swing-miss")
 const buttonEventOut  = document.querySelector("#event-out")
 const buttonHomerun   = document.querySelector("#homerun")
+const buttonBall  = document.querySelector("#ball")
 
 const valueBalls    = document.querySelector(".balls-value")
 const valueStrikes  = document.querySelector(".strikes-value")
@@ -21,6 +22,7 @@ const awayScore = document.querySelector(".score-row.away").children
 buttonSwingMiss.addEventListener('click', swingMiss)
 buttonEventOut.addEventListener('click', eventOut)
 buttonHomerun.addEventListener('click', homerun)
+buttonBall.addEventListener('click', ball)
 
 
 function swingMiss() {
@@ -32,6 +34,17 @@ function swingMiss() {
     }
     
     updateAll()
+}
+
+function ball() {
+    if (balls === 3) {
+        strikes = 0
+        balls = 0
+        updateAll()
+    } else {
+        balls++
+        updateAll()
+    }
 }
 
 function eventOut() {
