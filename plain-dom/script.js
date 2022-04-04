@@ -40,11 +40,11 @@ function ball() {
     if (balls === 3) {
         strikes = 0
         balls = 0
-        updateAll()
+        // updateAll()
     } else {
         balls++
-        updateAll()
     }
+    updateAll()
 }
 
 function eventOut() {
